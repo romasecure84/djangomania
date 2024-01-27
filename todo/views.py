@@ -2,18 +2,18 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
 #from django.http import Http404
 # My models:
-from todo.models import Todo, Category, Tag
+from todo.models import Todo, TodoCategory, TodoTag
 
-@login_required(login_url='/admin/login/')
-def home_view(request):
-    todos = Todo.objects.filter(
-        user=request.user,
-        is_active=True
-        )
-    context = dict(
-        todos=todos
-    )
-    return render(request, 'todo/todo_list.html', context)
+# @login_required(login_url='/admin/login/')
+# def home_view(request):
+#     todos = Todo.objects.filter(
+#         user=request.user,
+#         is_active=True
+#         )
+#     context = dict(
+#         todos=todos
+#     )
+#     return render(request, 'todo/todo_list.html', context)
 
 # def todo_detail_view(request, id):
 #     try:
@@ -27,7 +27,7 @@ def home_view(request):
 
 @login_required(login_url='/admin/login/')
 def category_view(request, category_slug):
-    category = get_object_or_404(Category, slug=category_slug)
+    category = get_object_or_404(TodoCategory, slug=category_slug)
     todos = Todo.objects.filter(
         user=request.user,
         is_active=True,
@@ -51,7 +51,7 @@ def todo_detail_view(request, category_slug, id):
 
 @login_required(login_url='/admin/login/')
 def tag_view(request, tag_slug):
-    tag=get_object_or_404(Tag, slug=tag_slug)
+    tag=get_object_or_404(TodoTag, slug=tag_slug)
     context = dict(
         tag = tag,
         todos=tag.todo_set.filter(user=request.user),
