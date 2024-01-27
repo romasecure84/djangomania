@@ -4,16 +4,16 @@ from django.shortcuts import render, get_object_or_404
 # My models:
 from todo.models import Todo, TodoCategory, TodoTag
 
-# @login_required(login_url='/admin/login/')
-# def home_view(request):
-#     todos = Todo.objects.filter(
-#         user=request.user,
-#         is_active=True
-#         )
-#     context = dict(
-#         todos=todos
-#     )
-#     return render(request, 'todo/todo_list.html', context)
+@login_required(login_url='/admin/login/')
+def all_todos_view(request):
+    todos = Todo.objects.filter(
+        user=request.user,
+        is_active=True
+        )
+    context = dict(
+        todos=todos
+    )
+    return render(request, 'todo/todo_list.html', context)
 
 # def todo_detail_view(request, id):
 #     try:
