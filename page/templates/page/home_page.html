@@ -1,0 +1,88 @@
+{% extends 'core/base.html' %}
+
+{% block title %} {{page_title}} {% endblock title %}
+
+{% block container-fluid %}
+{% include 'page/components/carousel_home.html' %}
+    <!-- hero content -->
+    <div class="container-fluid mb-4">
+       
+        <div class="bg-dark bg-gradient p-4 border-bottom border-top">
+            <div class="col-sm-8 offset-sm-2">
+                <div class="p-5 mb-4 bg-body-tertiary rounded-3">
+                    <div class="container-fluid">
+                        <h1 class="display-1 fw-bold text-center">Django</h1>
+                        <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas qui,
+                            non eveniet officiis
+                            inventore quisquam quod rerum nihil quia ut iusto beatae recusandae cupiditate dolores
+                            voluptates esse minus! Dolore, voluptatem?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- hero content end -->
+
+        <!-- About us -->
+        <div class="row bg-dark text-light">
+            <div class="col-sm-6 ms-0 ps-0">
+                <img src="https://picsum.photos/id/16/600/250" alt="" class="w-100">
+            </div>
+            <div class="col-sm-6 d-flex justify-content-center align-items-center">
+                <div class="text-center">
+                    <h2 class="display-2">Haqqimizda</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, sit.</p>
+                    <p>Commodi explicabo sequi sint voluptate vitae exercitationem iste ipsum repudiandae.</p>
+                    <p>Quam, facere illo reiciendis quos saepe totam. Quibusdam, hic quasi.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- about us end -->
+{% endblock container-fluid %}
+{% block container %}
+  
+    <!-- Products -->    
+        <div class="row">
+            <div class="col-sm-12">
+                <h2 class="text-center">Mehsullarimiz</h2>
+            </div>
+            <hr>
+            <div class="col-sm-4 mb-2">
+                <div class="card">
+                    <img src="https://picsum.photos/id/17/400/250" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Mehsul 1</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Arasdir</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 mb-2">
+                <div class="card">
+                    <img src="https://picsum.photos/id/18/400/250" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Mehsul 2</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Arasdir</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 mb-2">
+                <div class="card">
+                    <img src="https://picsum.photos/id/19/400/250" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Mehsul 3</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Arasdir</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- Products End -->
+{% endblock container %}
+
+
+    
