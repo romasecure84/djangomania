@@ -1,0 +1,9 @@
+# created by virtualenv automatically
+
+**/*_venv/*
+**/*/migrations/0*.py
+**/media_files
+
+.DS_*
+*.log
+logs
