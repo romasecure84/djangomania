@@ -1,6 +1,7 @@
 asgiref==3.7.2
 Django==5.0.1
 django-autoslug==1.9.9
+django-tinymce==3.6.1
 pillow==10.2.0
 sqlparse==0.4.4
 tzdata==2023.4
