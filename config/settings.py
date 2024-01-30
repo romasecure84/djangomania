@@ -46,7 +46,9 @@ MY_APPS = [
     'page',
 ]
 
-THIRD_PARTY_APPS = []
+THIRD_PARTY_APPS = [
+    'tinymce',
+]
 
 INSTALLED_APPS = BASE_APPS + THIRD_PARTY_APPS + MY_APPS
 

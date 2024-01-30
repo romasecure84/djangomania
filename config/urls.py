@@ -34,6 +34,10 @@ urlpatterns = [
 
     # Auth:
     path('account/logout/', logout_view, name='logout_view'),
+
+    # TinyMCE:
+    path('tinymce/', include('tinymce.urls')),
+    
     # Admin:
     path("admin/", admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
