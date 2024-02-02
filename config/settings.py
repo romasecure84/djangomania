@@ -44,8 +44,9 @@ BASE_APPS = [
 ]
 
 MY_APPS = [
-    'todo',
+    'blog',
     'page',
+    'todo',
 ]
 
 THIRD_PARTY_APPS = [
