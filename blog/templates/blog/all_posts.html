@@ -1,0 +1,42 @@
+{% extends 'core/base.html' %}
+
+{% block container %}
+  <div class="row">
+    <div class="col-sm-9">
+      {% for post in posts %}
+        <div class="col mb-3">
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm">
+                  <img src="{{ post.cover_image.url }}" alt="" class="w-100 img-thumbnail" />
+                </div>
+                <div class="col-sm">
+                  <h3 class="card-title">{{ post.title }}</h3>
+                  <p class="card-text">{{ todo.content }}</p>
+                  <a href="#" class="card-link">Incele</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="col-sm-3">
+      <div class="list-group">
+        <h3>Kateqoriyalar</h3>
+        {% for category in categories %}
+          <a href="#" class="list-group-item list-group-item-action" aria-current="true">{{ category.title }}</a>
+        {% endfor %}
+      </div>
+      <h3 class="mt-4">Etiketler</h3>
+      <ul class="list-inline mt-4">
+        {% for tag in tags %}
+          <li class="list-inline-item">
+            <span class="badge rounded-pill text-bg-primary">{{ tag.title }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endblock %}
