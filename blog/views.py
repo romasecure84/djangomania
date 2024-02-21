@@ -47,6 +47,9 @@ def tag_view(request, tag_slug):
 
 def post_detail_view(request, category_slug, post_slug):
     post = get_object_or_404(Post, slug=post_slug)
+    
+    post.view_count = post.view_count + 1
+    post.save()
 
     categories = BlogCategory.objects.filter(is_active=True).order_by('title')
     tags = BlogTag.objects.filter(is_active=True).order_by('title')
