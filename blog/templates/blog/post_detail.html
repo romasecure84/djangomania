@@ -3,15 +3,17 @@
 {% block container %}
   <div class="row">
     <div class="col-sm-9">
-      {% if category %}
-        <h1>{{ category.title|title }}</h1>
-      {% endif %}
+        <h1>{{ post.title }}
+          <small class="text-muted">
+            {{ post.category.title}}
+          </small>
+        </h1>        
       <div class="col mb-3">
         <div class="card">
           <div class="card-body">
             <img src="{{ post.cover_image.url }}" alt="" class="w-100 img-thumbnail" />
-            <h3 class="card-title">{{ post.title }}</h3>
-            <p class="card-text">{{ post.content }}</p>
+            <h3 class="card-title mt-3">{{ post.title }}</h3>
+            <p class="card-text">{{ post.content | safe }}</p>
             <ul class="list-inline">
               {% for tag in post.tag.all %}
                 <li class="list-inline-item">
