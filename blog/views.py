@@ -30,7 +30,7 @@ def category_view(request, category_slug):
 
 def tag_view(request, tag_slug):
     tag = get_object_or_404(BlogTag, slug=tag_slug)
-    tags = BlogCategory.objects.filter(is_active=True).order_by('title')
+    categories = BlogCategory.objects.filter(is_active=True).order_by('title')
     tags = BlogTag.objects.filter(is_active=True).order_by('title')
     posts = Post.objects.filter(is_active=True, tag=tag,).order_by('-created_at')
 
@@ -40,3 +40,16 @@ def tag_view(request, tag_slug):
         posts=posts,
     )
     return render(request, 'blog/all_posts.html', context)
+
+def post_detail_view(request, category_slug, post_slug):
+    post = get_object_or_404(Post, slug=post_slug)
+    categories = BlogCategory.objects.filter(is_active=True).order_by('title')
+    tags = BlogTag.objects.filter(is_active=True).order_by('title')
+
+    context = dict(
+        categories = categories,
+        tags = tags,
+        category = post.category,
+        post =post,
+    )
+    return render(request, 'blog/post_detail.html', context)
