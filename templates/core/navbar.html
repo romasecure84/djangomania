@@ -9,6 +9,8 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/">Ana Sehife</a>
           </li>
+
+          {% comment %} {% if request.user.is_authenticated %} {% endcomment %}
              <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Todo Kateqoriyalar
@@ -22,6 +24,7 @@
               {% endfor %}
             </ul>
           </li>
+          {% comment %} {% endif %} {% endcomment %}
 
           {% for page in global_pages %}
           <li class="nav-item">
